@@ -323,15 +323,16 @@ p { margin: 0; }
 .media-frame--wide { aspect-ratio: 16 / 10; }
 
 /* Device mockups — rendered at their own natural aspect ratio, never
-   cropped or stretched to match a preset frame shape. */
+   cropped or stretched to match a preset frame shape. Sized to fill the
+   column width so every mockup reads at the same scale regardless of its
+   source resolution. */
 .device-shot {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .device-shot img {
-  max-width: 100%;
-  width: auto;
+  width: 100%;
   height: auto;
   display: block;
 }
@@ -411,7 +412,7 @@ p { margin: 0; }
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 56px;
-  align-items: center;
+  align-items: start;
 }
 .split--text-right .split-copy { order: 2; }
 .split-copy .btn { margin-top: 26px; }
