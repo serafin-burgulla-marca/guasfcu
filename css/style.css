@@ -151,7 +151,7 @@ p { margin: 0; }
   flex-shrink: 0;
 }
 .brand-logo {
-  height: 42px;
+  height: 32px;
   width: auto;
   display: block;
 }
@@ -160,12 +160,12 @@ p { margin: 0; }
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 3.6px;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
 .nav-link {
-  padding: 8px 12px;
+  padding: 8px 10.8px;
   font-weight: 700;
   font-size: .88rem;
   color: var(--navy);
@@ -176,7 +176,7 @@ p { margin: 0; }
 .nav-cta {
   background: var(--navy);
   color: var(--white);
-  margin-left: 6px;
+  margin-left: 5.4px;
 }
 .nav-cta:hover {
   background: var(--blue-light);
@@ -321,16 +321,19 @@ p { margin: 0; }
 }
 .media-frame--portrait { aspect-ratio: 450 / 560; }
 .media-frame--wide { aspect-ratio: 16 / 10; }
-.media-frame--contain {
-  padding: 28px;
-  background: linear-gradient(160deg, #eef3fc, #dbe6f9);
+
+/* Device mockups — rendered at their own natural aspect ratio, never
+   cropped or stretched to match a preset frame shape. */
+.device-shot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.media-frame--contain .site-img { object-fit: contain; }
-.media-frame--phone-sm {
-  aspect-ratio: 73 / 130;
-  max-width: 230px;
-  margin: 0 auto;
-  padding: 20px;
+.device-shot img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  display: block;
 }
 
 /* ===========================================================
