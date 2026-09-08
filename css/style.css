@@ -150,26 +150,12 @@ p { margin: 0; }
   gap: 10px;
   flex-shrink: 0;
 }
-.logo-mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 10px;
-  background: var(--navy);
-  color: var(--blue-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  font-size: 1.05rem;
-  letter-spacing: .5px;
+.brand-logo {
+  height: 42px;
+  width: auto;
+  display: block;
 }
-.brand-name {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  font-size: 1.15rem;
-  color: var(--navy);
-}
+.brand-logo--footer { height: 56px; }
 
 .nav-menu {
   display: flex;
@@ -309,7 +295,7 @@ p { margin: 0; }
   color: var(--ink-muted);
   text-align: center;
 }
-.media-frame::before {
+.media-frame:not(:has(img))::before {
   content: "🖼  " attr(data-label);
   font-family: var(--font-body);
   font-weight: 700;
@@ -317,7 +303,7 @@ p { margin: 0; }
   padding: 0 24px;
   white-space: pre-line;
 }
-.media-frame::after {
+.media-frame:not(:has(img))::after {
   content: attr(data-dims);
   position: absolute;
   bottom: 12px;
@@ -335,6 +321,17 @@ p { margin: 0; }
 }
 .media-frame--portrait { aspect-ratio: 450 / 560; }
 .media-frame--wide { aspect-ratio: 16 / 10; }
+.media-frame--contain {
+  padding: 28px;
+  background: linear-gradient(160deg, #eef3fc, #dbe6f9);
+}
+.media-frame--contain .site-img { object-fit: contain; }
+.media-frame--phone-sm {
+  aspect-ratio: 73 / 130;
+  max-width: 230px;
+  margin: 0 auto;
+  padding: 20px;
+}
 
 /* ===========================================================
    Bands (navy full-width sections)
@@ -414,6 +411,7 @@ p { margin: 0; }
   align-items: center;
 }
 .split--text-right .split-copy { order: 2; }
+.split-copy .btn { margin-top: 26px; }
 
 .check-list { margin-top: 22px; display: flex; flex-direction: column; gap: 14px; }
 .check-list li {
@@ -443,6 +441,12 @@ p { margin: 0; }
 .icon-badge svg { width: 28px; height: 28px; }
 .icon-badge--lg { width: 64px; height: 64px; }
 .icon-badge--lg svg { width: 32px; height: 32px; }
+
+.service-card-img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  margin-bottom: 20px;
+}
 
 /* ===========================================================
    Services grid
